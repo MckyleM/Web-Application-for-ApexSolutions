@@ -30,6 +30,8 @@ public class System_Forecast {
     }
 
     public void notifyMaintenance() {
+        SMSAPI api = new SMSAPI();
+        api.SendMessage("System number " +Integer.toString(getSystemID()) + "needs maintenance", forecast);
         // Logic for notifying maintenance
     }
 

@@ -13,8 +13,13 @@ public class Technician {
     private String technicianName;
     private String task;
     private String[] skills;
-    private String[] availability;
+    private boolean availability;
+    private String number;
 
+    public void initilize(int id)
+    {
+        String query = "SELECT * FROM \"technician\" WHERE technicianID = ?";
+    }
     public int getTechnicianID() {
         return technicianID;
     }
@@ -47,12 +52,18 @@ public class Technician {
     public void setSkills(String[] skills) {
         this.skills = skills;
     }
-
-    public String[] getAvailability() {
+    public void setNumber(String Num)
+    {
+        this.number = Num;
+    } 
+    public String getNumber(){
+        return this.number;
+    }
+    public boolean getAvailability() {
         return availability;
     }
 
-    public void setAvailability(String[] availability) {
+    public void setAvailability(boolean availability) {
         this.availability = availability;
         updateAvailability();
     }

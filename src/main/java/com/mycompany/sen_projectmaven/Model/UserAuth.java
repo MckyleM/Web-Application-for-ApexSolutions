@@ -17,7 +17,8 @@ public class UserAuth {
         
          String query = "SELECT * FROM \"Users\" WHERE username = ? AND password = ?";
          
-         try (Connection connection = DatabaseConnection.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+         try (Connection connection = DatabaseConnection.getConnection(); 
+             PreparedStatement statement = connection.prepareStatement(query)) {
              
              statement.setString(1, username);
              statement.setString(2, password);

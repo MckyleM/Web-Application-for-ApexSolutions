@@ -37,7 +37,7 @@ public class Main extends HttpServlet {
             out.println("</html>");
         }
     }
-    public void CallAPI() {
+    public void TestAPI(String number) {
         System.out.println("Start of program");
         SMSAPI sms = new SMSAPI();
 
@@ -46,7 +46,7 @@ public class Main extends HttpServlet {
         String message = "This test is final test and it will work for sure for sure";
         
         try{
-            sms.SendMessage(message);
+            sms.SendMessage(message,number);
             System.out.println("SMS sent successfully");
             }
         catch(Exception e)
@@ -92,7 +92,7 @@ public class Main extends HttpServlet {
             boolean smsSent = false;
 
             try {
-                CallAPI(); // Call your sms function
+                //TestAPI(); // Call your sms function
                 smsSent = true;
             } catch (Exception e) {
                 smsSent = false;

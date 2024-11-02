@@ -19,10 +19,11 @@ public class SMSAPI {
   // Find your Account Sid and Token at twilio.com/console
   public static final String ACCOUNT_SID = "ACb123b6f9ee87c0c30d1b9050e1b49525";
   public static final String AUTH_TOKEN = "[AUTH TOKEN]";//ADD THE AUTH TOKEN HERE
-  public static void SendMessage(String txt) {
+  public static void SendMessage(String txt,String number) {
     Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+    //Default number: +18777804236
     Message message = Message.creator(
-      new com.twilio.type.PhoneNumber("+18777804236"),
+      new com.twilio.type.PhoneNumber(number),
 "MG1c257122355d53f67637feea33a61398",
       txt)
     .create();

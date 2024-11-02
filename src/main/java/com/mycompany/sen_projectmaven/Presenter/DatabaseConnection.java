@@ -16,7 +16,7 @@ public class DatabaseConnection {
     
     private static final String URL = "jdbc:postgresql://localhost:5432/ApexDB";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "Kaykaykay1_";
+    private static final String PASSWORD = "";
     private static final String DRIVER = "org.postgresql.Driver";
     
     
