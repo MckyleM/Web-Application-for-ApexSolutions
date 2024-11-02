@@ -1,4 +1,4 @@
-package com.mycompany.sen_projectmaven;
+package com.mycompany.sen_projectmaven.Model;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
