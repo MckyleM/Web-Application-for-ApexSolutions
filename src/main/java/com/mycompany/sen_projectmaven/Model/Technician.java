@@ -18,6 +18,7 @@ public class Technician {
 
     public void initilize(int id)
     {
+        //connect to database and execute
         String query = "SELECT * FROM \"technician\" WHERE technicianID = ?";
     }
     public int getTechnicianID() {
