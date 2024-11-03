@@ -24,10 +24,15 @@ tr td:first-child {
     border-bottom: 2px solid black;
 }
 
-body {
+html {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+body {
+    
     background-color: var(--LighterBlue);
      color: var(--White) ;
      
