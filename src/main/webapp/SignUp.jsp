@@ -13,7 +13,7 @@
         <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form name="formSignup" action="SignupServlet">
+        <form name="formSignup" action="SignupServlet" method="POST">
             <table border="0" cellpadding="5">
                 
                 <tbody>

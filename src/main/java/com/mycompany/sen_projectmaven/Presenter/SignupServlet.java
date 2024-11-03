@@ -78,11 +78,14 @@ public class SignupServlet extends HttpServlet {
         String password = request.getParameter("txtpassword");
         String email = request.getParameter("txtemail");
         
-        if (UserAuth.authenticate(username, password)) {
+        if (UserAuth.authenticate(email)) {
             
             System.out.println("User already exists");
+            request.getRequestDispatcher("SignUp.jsp").forward(request, response);
         } else{
-            UserAuth.update(username, password, email);
+            UserAuth.insert(username, password, email);
+            response.sendRedirect("index.jsp");
+            
         }
         
     }

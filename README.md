@@ -7,7 +7,14 @@ SEN PROJECT 4: API DOCUMENTATION
 Nk is currently working on:
 a lot of things, oh no scope creep. thats why im writing it down.
 
-I want the alert that you got some login wrong or something tto be on the hmtl
+
+	I need to write code so Succesful sign up updates the database.
+
+	I want the alert that you got some login wrong or something to show on the hmtl. like the text boxes going red.
+	that requires a streamwriter i think, to write CSS to the HTML.
+	
+	Hashing of passwords so they can be hidden in the database
+
 **/
 
 Why we used the Twilio API
