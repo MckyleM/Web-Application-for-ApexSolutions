@@ -1,11 +1,9 @@
 com\mycompany\sen_projectmaven\Model\Main.class
-com\mycompany\sen_projectmaven\Model\Self_Service.class
 com\mycompany\sen_projectmaven\Model\Contract_Manager.class
 com\mycompany\sen_projectmaven\Model\CRM.class
 com\mycompany\sen_projectmaven\Model\Customer_Ratings.class
 com\mycompany\sen_projectmaven\Model\UserAuth.class
 com\mycompany\sen_projectmaven\Model\Client.class
-com\mycompany\sen_projectmaven\Model\Service_Request.class
 com\mycompany\sen_projectmaven\Model\SMSAPI.class
 com\mycompany\sen_projectmaven\Presenter\DatabaseConnection.class
 com\mycompany\sen_projectmaven\JakartaRestConfiguration.class
