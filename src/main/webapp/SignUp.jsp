@@ -10,32 +10,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form name="formSignup" action="SignUp.java">
-            <table border="1" cellpadding="1">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
+        <form name="formSignup" action="SignupServlet.java">
+            <table border="0" cellpadding="5">
+                
                 <tbody>
                     <tr>
-                        <td>email</td>
                         <td></td>
+                        <td><input type="email" name="txtusername"  size="15" placeholder="user@email.com"/></td>
                     </tr>
                     <tr>
-                        <td>username</td>
                         <td></td>
+                        <td><input type="text" name="txtusername"  size="15" placeholder="Username"/></td>
                     </tr>
                     <tr>
-                        <td>password</td>
                         <td></td>
+                        <td><input type="password" name="txtpassword"  size="15" placeholder="Password"/></td>
                     </tr>
                     <tr>
-                        <td>retype password</td>
                         <td></td>
+                        <td><input type="password" name="txtpassword"  size="15" placeholder="Retype Password"/></td>
                     </tr>
                     <tr>
                         <td></td>

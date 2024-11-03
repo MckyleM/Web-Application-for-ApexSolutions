@@ -88,7 +88,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("Main.jsp");
         } else {
             request.setAttribute("errorMessage",String.format("Invalid username or password. Cannot use %s and %s",username, password) );
-            alert(String.format("Invalid username or password. Cannot use %s and %s",username, password));
+            
             System.out.println(request.getAttribute("errorMessage"));
             //put you back into the login page
             request.getRequestDispatcher("index.jsp").forward(request, response);
