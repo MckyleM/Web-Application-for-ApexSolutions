@@ -24,3 +24,76 @@ How is the API integrated
 The API uses a callback function that checks the job table to see if any jobs have a job status of unassigned. If it sees a job with no assignment, the API is initiated and all the unassigned technicians are sent a text message(Due to Twilio verification restrictions, and a lack of time to apply, the API only sends text to a virtual number hosted by Twilio)
 
 
+Project Functions:
+User Registration and Authentication
+
+Description: Handles user sign-up, login, and authentication.
+
+Functions:
+
+register_user(): Registers a new user.
+
+login_user(): Authenticates user credentials.
+
+logout_user(): Logs out the user.
+
+SMS Sending
+
+Description: Integrates with the SMS API to send and receive messages.
+
+Functions:
+
+send_sms(): Sends an SMS through the SMS API.
+
+Database Operations
+
+Description: Manages CRUD (Create, Read, Update, Delete) operations for your database.
+
+Functions:
+
+create_job(): Adds a new entry to the database.
+
+get_technicians(): Retrieves all technicians
+
+update_jobs(): Updates an existing database entry.
+
+
+User Management
+
+Description: Handles user-related operations.
+
+Functions:
+
+get_user_profile(): Retrieves user profile details.
+
+update_user_profile(): Updates user profile information.
+
+delete_user_profile(): Deletes a user profile.
+
+Object Management
+
+Description: Manages your application objects (e.g., products, services).
+
+Functions:
+
+create_object(): Creates a new object.
+
+retrieve_object(): Fetches object details.
+
+update_object(): Updates object information.
+
+Website Interaction
+
+Description: Deals with the web interface and user interactions.
+
+Functions:
+
+handle_form_submission(): Processes form data from the website.
+
+Notifications and Alerts
+
+Description: Manages sending notifications and alerts to users.
+
+Functions:
+
+send_push_notification(): Sends a push notification.

@@ -6,7 +6,7 @@ package com.mycompany.sen_projectmaven.Model;
 
 /**
  *
- * @author mckyl
+ * @author mckyle
  */
 public class Technician {
     private int technicianID;
