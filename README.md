@@ -1,5 +1,15 @@
 SEN PROJECT 4: API DOCUMENTATION
 
+
+/** 
+!To be Removed!
+
+Nk is currently working on:
+a lot of things, oh no scope creep. thats why im writing it down.
+
+I want the alert that you got some login wrong or something tto be on the hmtl
+**/
+
 Why we used the Twilio API
 We decided to use the Twilio external API.
 The Twilio API is a restful API. 
