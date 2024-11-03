@@ -13,13 +13,13 @@
         <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form name="formSignup" action="SignupServlet.java">
+        <form name="formSignup" action="SignupServlet">
             <table border="0" cellpadding="5">
                 
                 <tbody>
                     <tr>
                         <td></td>
-                        <td><input type="email" name="txtusername"  size="15" placeholder="user@email.com"/></td>
+                        <td><input type="email" name="txtemail"  size="15" placeholder="user@email.com"/></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -31,11 +31,11 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="password" name="txtpassword"  size="15" placeholder="Retype Password"/></td>
+                        <td><input type="password" name="txtpassword2"  size="15" placeholder="Retype Password"/></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td></td>
+                        <td><input type="submit" value="sign up" name="btnsignup" /></td>
                     </tr>
                 </tbody>
             </table>

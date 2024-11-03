@@ -76,13 +76,13 @@ public class SignupServlet extends HttpServlet {
         
         String username = request.getParameter("txtusername");
         String password = request.getParameter("txtpassword");
+        String email = request.getParameter("txtemail");
         
         if (UserAuth.authenticate(username, password)) {
             
             System.out.println("User already exists");
         } else{
-            
-            
+            UserAuth.update(username, password, email);
         }
         
     }
