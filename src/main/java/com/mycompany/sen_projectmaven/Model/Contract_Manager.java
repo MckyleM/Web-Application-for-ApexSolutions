@@ -52,6 +52,12 @@ public class Contract_Manager {
         return contract;
     }
 
+    public int getContractID() {
+        return contractID;
+        
+        
+    }
+
     public void renewContract(Date newEndDate) {
         endDate = newEndDate;
     }

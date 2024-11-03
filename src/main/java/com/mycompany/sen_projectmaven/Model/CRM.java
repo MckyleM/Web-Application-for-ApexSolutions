@@ -16,10 +16,6 @@ public class CRM {
         return client.getClientID();
     }
 
-    public int getContractID() {
-        return contractManager.getContractID();
-    }
-
     public String[] getClientHistory() {
         return client.clientHistory;
     }
