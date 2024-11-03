@@ -1,4 +1,4 @@
-package com.mycompany.sen_projectmaven.Model;
+    package com.mycompany.sen_projectmaven.Model;
 
 import com.mycompany.sen_projectmaven.Presenter.DatabaseConnection;
 import java.sql.Connection;
