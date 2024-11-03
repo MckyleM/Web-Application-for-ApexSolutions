@@ -23,7 +23,7 @@ public class UserAuth {
              statement.setString(1, username);
              statement.setString(2, password);
              
-             //places all mentions of that name and passwor and then returns whether the list has been populated.
+             //places all mentions of that name and password and then returns whether the list has been populated(does the user exist).
              try (ResultSet resultSet = statement.executeQuery()){
                  return resultSet.next();
              }

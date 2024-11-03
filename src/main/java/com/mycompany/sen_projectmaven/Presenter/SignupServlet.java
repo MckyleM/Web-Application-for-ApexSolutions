@@ -4,6 +4,7 @@
  */
 package com.mycompany.sen_projectmaven.Presenter;
 
+import com.mycompany.sen_projectmaven.Model.UserAuth;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -71,8 +72,16 @@ public class SignupServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         
+        String username = request.getParameter("txtusername");
+        String password = request.getParameter("txtpassword");
+        
+        if (UserAuth.authenticate(username, password)) {
+            
+            System.out.println("User already exists");
+        } else{
+            
+        }
         
     }
 

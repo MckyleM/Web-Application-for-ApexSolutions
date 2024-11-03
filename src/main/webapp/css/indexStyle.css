@@ -27,7 +27,8 @@ tr td:first-child {
 body {
     background-color: var(--LighterBlue);
      color: var(--White) ;
-     padding: 20px;
+     padding: 50%;
+     
 }
 
 [name="btnsubmit"],[name="btnsignup"] {

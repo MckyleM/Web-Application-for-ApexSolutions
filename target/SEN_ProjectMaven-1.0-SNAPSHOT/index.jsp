@@ -23,12 +23,12 @@
                 <tbody>
                    
                     <tr>
-                        <td>Username:</td>
-                        <td><input type="text" name="txtusername"  size="15" /></td>
+                        <td></td>
+                        <td><input type="text" name="txtusername"  size="15" placeholder="Username"/></td>
                     </tr>
                     <tr>
-                        <td>Password:</td>
-                        <td><input type="password" name="txtpassword"  size="15" /></td>
+                        <td></td>
+                        <td><input type="password" name="txtpassword"  size="15" placeholder="Password"/></td>
                     </tr>
                     <tr>
                         <td width="15px"></td>
