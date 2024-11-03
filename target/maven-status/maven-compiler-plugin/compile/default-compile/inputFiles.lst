@@ -1,15 +1,14 @@
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Client.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\resources\JakartaEE10Resource.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Technician.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\System_Forecast.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Customer_Ratings.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Contract_Manager.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Presenter\DatabaseConnection.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Presenter\LoginServlet.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\SMSAPI.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Self_Service.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\UserAuth.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\CRM.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Main.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Service_Request.java
-C:\Users\mckyl\OneDrive\Documents\Belgium\Modules\SEN\Apex_Solutions\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\JakartaRestConfiguration.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\SMSAPI.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\CRM.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Technician.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\System_Forecast.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\JakartaRestConfiguration.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Customer_Ratings.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Job.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Contract_Manager.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Main.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\resources\JakartaEE10Resource.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\UserAuth.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Presenter\DatabaseConnection.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Model\Client.java
+C:\Users\ntuli\Documents\Work\3rd year\SEN381\Full\Mckyle fork\Web-Application-for-ApexSolutions\src\main\java\com\mycompany\sen_projectmaven\Presenter\LoginServlet.java

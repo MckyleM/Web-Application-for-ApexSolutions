@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class UserAuth {
      public static boolean authenticate(String username, String password) {
-        
+        //check if user is real, if their credentials exist in the database
          String query = "SELECT * FROM \"Users\" WHERE username = ? AND password = ?";
          
          try (Connection connection = DatabaseConnection.getConnection(); 
@@ -23,6 +23,7 @@ public class UserAuth {
              statement.setString(1, username);
              statement.setString(2, password);
              
+             //places all mentions of that name and passwor and then returns whether the list has been populated.
              try (ResultSet resultSet = statement.executeQuery()){
                  return resultSet.next();
              }

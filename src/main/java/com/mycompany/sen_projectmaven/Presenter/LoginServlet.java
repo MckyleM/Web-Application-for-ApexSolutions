@@ -79,15 +79,16 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("txtusername");
         String password = request.getParameter("txtpassword");
         
-        System.out.println("Trying...");
-
+        //checks if the user exists and is registered
         if (UserAuth.authenticate(username, password)) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
+            //sends you to through to the next page
             response.sendRedirect("Main.jsp");
         } else {
             request.setAttribute("errorMessage",String.format("Invalid username or password. Cannot use %s and %s",username, password) );
             System.out.println(request.getAttribute("errorMessage"));
+            //put you back into th elogin page
             request.getRequestDispatcher("index.jsp").forward(request, response);
             
         }
