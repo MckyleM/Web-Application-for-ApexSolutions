@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,11 +22,14 @@ public class Job {
     public String JobStatus;
     public String JobType;
     private int ContractID;
-    
-    public void CreateJob(int jobID,String jobStat, String jobtype, int contractID)
+    public Job(){}
+    public Job(int JobID, int TechnicianID, String JobStatus, String JobType, int ContractID)
     {
-        this.ContractID = contractID;
-        
+        this.JobID = JobID;
+        this.TechnicianID = TechnicianID;
+        this.JobStatus = JobStatus;
+        this.JobType = JobType;
+        this.ContractID = ContractID;
     }
     public void AssignJob(int techID,int jobID)
     {
@@ -60,6 +65,25 @@ public class Job {
              e.printStackTrace();
          }
          return false;
+    }
+    public List<Integer> findOpenJob()
+    {
+        //List<String> availabletechnums = new ArrayList<>();
+        List<Integer> jobs = new ArrayList<>();
+        String query = "SELECT jobID FROM jobs WHERE jobStatus = Open";
+        try (Connection connection = DatabaseConnection.getConnection(); 
+            PreparedStatement pstmt = connection.prepareStatement(query)) {
+            ResultSet rs = pstmt.executeQuery();
+            
+
+            //places all mentions of that name and password and then returns whether the list has been populated(does the user exist).
+            while(rs.next()) {
+                jobs.add(rs.getInt("jobID"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return jobs;
     }
     
 }

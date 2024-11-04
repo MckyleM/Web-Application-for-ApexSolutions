@@ -67,11 +67,12 @@ public class Client {
 
     }
 
-    public void submitFeedback(int id) {
+    public void submitFeedback(int id,String input) {
         query = "UPDATE clients SET feedback = ? WHERE clientID = ?";
+        
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, feedback);
+            stmt.setString(1, input);
             stmt.setInt(2, id);
             stmt.executeUpdate();
         } catch (SQLException e) {

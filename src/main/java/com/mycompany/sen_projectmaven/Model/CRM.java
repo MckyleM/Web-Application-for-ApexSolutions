@@ -8,7 +8,7 @@ package com.mycompany.sen_projectmaven.Model;
  *
  * @author mckyl
  */
-public class CRM {
+public abstract class CRM {
     private Client client = new Client();
     private Contract_Manager contractManager = new Contract_Manager();
 
@@ -21,6 +21,7 @@ public class CRM {
     }
 
     public void getClientInfo() {
+        
         // Logic to get client info
     }
 

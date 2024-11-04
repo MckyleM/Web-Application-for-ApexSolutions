@@ -37,27 +37,6 @@ public class Main extends HttpServlet {
             out.println("</html>");
         }
     }
-    public void TestAPI(String number) {
-        System.out.println("Start of program");
-        SMSAPI sms = new SMSAPI();
-
-        // Example data
-        //String phoneNumber = "+1234567890";
-        String message = "This test is final test and it will work for sure for sure";
-        
-        try{
-            sms.SendMessage(message,number);
-            System.out.println("SMS sent successfully");
-            }
-        catch(Exception e)
-            {
-               System.out.println("Failed to send SMS to ");
-            }
-        
-        System.out.print("End of program");
-            
-       
-    }
 
 
     
