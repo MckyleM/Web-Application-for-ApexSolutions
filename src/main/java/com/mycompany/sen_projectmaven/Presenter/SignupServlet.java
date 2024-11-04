@@ -82,9 +82,16 @@ public class SignupServlet extends HttpServlet {
             
             System.out.println("User already exists");
             request.getRequestDispatcher("SignUp.jsp").forward(request, response);
+
         } else{
+            //if the email is nothing, make the email null
+            if (email == "") {
+                email = null;
+            }
+
             UserAuth.insert(username, password, email);
             response.sendRedirect("index.jsp");
+
             
         }
         

@@ -7,24 +7,49 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : ntuli
 */
 :root {
-    --Blue : #28669F ;
-    --LighterBlue : #4A8597 ;
-    --White : #F4F4F4 ; 
+    --LightBackgroundC : #CADCFC ;
+    --DarkBlue: #00246B ;
+    --White : #CADCFC ;
     --Black : #261F26 ;
-    --Orange : #E7954A ; 
+    --Orange : #E7954A ;
 }
 
 body {
-    background-color: var(--LighterBlue);
+    background-color: var(--LightBackgroundC);
+    font-family: Arial, sans-serif;
+    color: var(--DarkBlue);
+    margin: 0;
     padding: 20px;
 }
 
-[name="btnlogout"] {
-    padding: 5px 20px;
-    background-color: var(--Orange) ;
-    border-radius: 10% ;
-    border: 0px outset var(--White);
-    
-    
-   
+header, footer{
+    background-color: var(--DarkBlue) ;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-align: center;
 }
+nav{
+    background-color: var(--DarkBlue) ;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+nav a {
+    color: #FFFFFF;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+nav a:hover{
+    background-color: var(--LightBackgroundC);
+    color: var(--DarkBlue);
+}
+
+.container{
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
