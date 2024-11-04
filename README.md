@@ -15,6 +15,8 @@ a lot of things, oh no scope creep. thats why im writing it down.
 	
 	Hashing of passwords so they can be hidden in the database
 
+ 	Dynamically generated CSS files that change depending on certain info. (could have different colour schemes for the app depending on user)
+
 **/
 
 Why we used the Twilio API
