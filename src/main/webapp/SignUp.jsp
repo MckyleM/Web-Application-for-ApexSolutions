@@ -27,6 +27,10 @@
                     </tr>
                     <tr>
                         <td></td>
+                        <td><input type="text" name="txtclientname"  size="15" placeholder="Name" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><input type="password" name="txtpassword"  size="15" placeholder="Password" required/></td>
                     </tr>
                     <tr>

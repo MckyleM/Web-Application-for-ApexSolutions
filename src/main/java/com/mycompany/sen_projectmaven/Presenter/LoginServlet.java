@@ -4,7 +4,6 @@
  */
 package com.mycompany.sen_projectmaven.Presenter;
 
-import com.mycompany.sen_projectmaven.Model.UserAuth;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -75,22 +74,22 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
+        UserAuth auth = new UserAuth();
         
         String username = request.getParameter("txtusername");
         String password = request.getParameter("txtpassword");
         
         //checks if the user exists and is registered
-        if (UserAuth.authenticate(username, password)) {
+        if (auth.authenticate(username, password)) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
-            //sends you to through to the next page
+            //sends you through to the next page
             response.sendRedirect("Main.jsp");
         } else {
             request.setAttribute("errorMessage",String.format("Invalid username or password. Cannot use %s and %s",username, password) );
             
             System.out.println(request.getAttribute("errorMessage"));
-            showMessageDialog(null, "Invalid Login info");
+            showMessageDialog(null, String.format("Invalid username or password. Cannot use %s and %s",username, password));
 
             
             //put you back into the login page

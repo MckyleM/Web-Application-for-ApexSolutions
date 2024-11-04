@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="header">
-    <h1>Client Management</h1>
+    <h1>Welcome to ApexCare Solutions</h1>
 </div>
 
 <div class="navbar">
@@ -93,7 +93,7 @@
 </div>
 
 <div class="footer">
-    <p>&copy; 2024 Client Management System</p>
+    <p>&copy; 2024 ApexCare Solutions - All rights reserved</p>
 </div>
 
 <script>
