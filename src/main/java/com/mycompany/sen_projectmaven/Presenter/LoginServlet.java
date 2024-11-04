@@ -5,7 +5,6 @@
 package com.mycompany.sen_projectmaven.Presenter;
 
 import com.mycompany.sen_projectmaven.Model.UserAuth;
-import com.twilio.rest.monitor.v1.Alert;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -14,6 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -90,9 +90,13 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("errorMessage",String.format("Invalid username or password. Cannot use %s and %s",username, password) );
             
             System.out.println(request.getAttribute("errorMessage"));
+            showMessageDialog(null, "Invalid Login info");
+
+            
             //put you back into the login page
             request.getRequestDispatcher("index.jsp").forward(request, response);
-            
+
+
         }
         
     }
