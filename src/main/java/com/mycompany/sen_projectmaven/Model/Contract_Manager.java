@@ -22,25 +22,35 @@ import com.mycompany.sen_projectmaven.Presenter.DatabaseConnection;
 public class Contract_Manager {
     
     private int contractID;
+    private int clientID;
     private Date startDate;
     private Date endDate;
+    
+    public Contract_Manager(){};
+    public Contract_Manager(int ContractID,int ClientID, Date StartDate, Date EndDate)
+    {
+        this.contractID = ContractID;
+        this.clientID = ClientID;
+        this.startDate = StartDate;
+        this.endDate = EndDate;
+    }
     String query;
 
     public Contract_Manager getContract(int ID) {
         Contract_Manager contract = null;
-        query = "SELECT contractID FROM contract_manager WHERE contractID = ?";
+        query = "SELECT contractID FROM contract_manager WHERE clientID = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setInt(1, ID); 
             ResultSet rs = stmt.executeQuery();
             //Finds first instance of ID
-            if (rs.next()) {
-                contract = new Contract_Manager();
+            while (rs.next()) {
+                contract = new Contract_Manager(contractID, clientID, startDate, endDate);
                 contract.contractID =rs.getInt("contractID");
                 contract.startDate = rs.getDate("startDate");
                 contract.endDate = rs.getDate("endDate");   
-
+                
                 // Add additional fields here as needed
             }
 
@@ -52,6 +62,23 @@ public class Contract_Manager {
         return contract;
     }
 
+    public String getContractString(int ID) {
+        String ContractInfoString = null;
+        query = "SELECT * FROM public.contract_manager WHERE clientID = ?";
+        try (Connection connection = DatabaseConnection.getConnection(); 
+             PreparedStatement statement = connection.prepareStatement(query)) {
+             statement.setString(1, Integer.toString(ID));
+             ResultSet rs = statement.executeQuery();
+             
+             while(rs.next()){
+                ContractInfoString += rs.getString("username, clientname, email, clientHistory") + ("\n");
+                
+             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ContractInfoString;
+    }
     public int getContractID() {
         return contractID;
         

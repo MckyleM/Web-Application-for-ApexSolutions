@@ -23,9 +23,9 @@ public class Job {
     public String JobType;
     private int ContractID;
     public Job(){}
-    public Job(int JobID, int TechnicianID, String JobStatus, String JobType, int ContractID)
+    public Job(int jobID, int TechnicianID, String JobStatus, String JobType, int ContractID)
     {
-        this.JobID = JobID;
+        this.JobID = jobID;
         this.TechnicianID = TechnicianID;
         this.JobStatus = JobStatus;
         this.JobType = JobType;

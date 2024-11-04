@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mycompany.sen_projectmaven.Presenter.DatabaseConnection;
 
@@ -17,68 +19,68 @@ import com.mycompany.sen_projectmaven.Presenter.DatabaseConnection;
  */
 public class Client {
     private int clientID;
+    public String username;
     private String clientName;
     private String[] contracts;
     public String[] clientHistory;
-    public String feedback;
+    
+    
+    public Client(){};
+    public Client(int clientID, String username, String clientName, String[] contracts, String[] clientHistory)
+    {
+        this.clientID = clientID;
+        this.username = username;
+        this.clientName = clientName;
+        this.contracts = contracts;
+        this.clientHistory = clientHistory;
+        
+    }
     String query;
     public Client getClient(int ID) {
         Client client = null;
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM public.clients WHERE clientID = ?")) {
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM clients WHERE clientID = ?")) {
             stmt.setInt(1, ID);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-            client = new Client();
+            client = new Client(clientID,username, clientName,contracts,clientHistory);
             client.clientID = rs.getInt("clientID");
+            client.username = rs.getString("username");
             client.clientName = rs.getString("clientName");
             client.contracts = (String[]) rs.getArray("contracts").getArray();
             client.clientHistory = (String[]) rs.getArray("clientHistory").getArray();
-            client.feedback = rs.getString("feedback");
+            
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return client;
     }
-    public int getClientID() {
-        return clientID;
+    
+    public String getClientString(int ID) {
+        String ClientInfoString = null;
+        query = "SELECT * FROM clients WHERE clientID = ?";
+        try (Connection connection = DatabaseConnection.getConnection(); 
+             PreparedStatement statement = connection.prepareStatement(query)) {
+             statement.setString(1, Integer.toString(ID));
+             ResultSet rs = statement.executeQuery();
+             
+             if(rs.next()){
+                ClientInfoString = rs.getString("username, clientname, email, clientHistory");
+                
+             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ClientInfoString;
     }
-
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String[] getContracts() {
-        return this.contracts;
-    }
-
-    public void setContracts(String[] contract) {
-        this.contracts = contract;
-    }
-
+    
     public void updateProfile() {
         System.out.println("Updating profile...");
         //Add more logic here
 
     }
 
-    public void submitFeedback(int id,String input) {
-        query = "UPDATE clients SET feedback = ? WHERE clientID = ?";
-        
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, input);
-            stmt.setInt(2, id);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Feedback submitted successfully");
-    }
+    
 }
 

@@ -3,24 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.sen_projectmaven.Model;
+
+import com.mycompany.sen_projectmaven.Presenter.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import com.mycompany.sen_projectmaven.Presenter.DatabaseConnection;
+import java.util.ArrayList;
+
 /**
  *
  * @author mckyl
  */
-public abstract class CRM {
-    private Client client = new Client();
-    private Contract_Manager contractManager = new Contract_Manager();
+public class CRM {
+    Client client = new Client();
+    Contract_Manager contractmanager = new Contract_Manager();
 
-    public int getClientID() {
-        return client.getClientID();
-    }
 
     public List<String> getClientHistory(int ID) {
         List<String> ClientHistoryList = new ArrayList<>();
@@ -29,24 +28,30 @@ public abstract class CRM {
              PreparedStatement statement = connection.prepareStatement(query)) {
              statement.setString(1, Integer.toString(ID));
              ResultSet rs = statement.executeQuery();
-
+             
              while(rs.next()){
                  ClientHistoryList.add(rs.getString("clientHistory"));
              }
-
+             
          } catch (SQLException e) {
              e.printStackTrace();
          }
         return ClientHistoryList;
-
+       
     }
 
-    public void getClientInfo() {
-        
-        // Logic to get client info
+    public List<String> getClientInfo(int ID) {
+        List<String> Info = new ArrayList<>();
+        try
+        {
+            Info.add(client.getClientString(ID));
+            Info.add(contractmanager.getContractString(ID));
+            
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+          return Info;
     }
 
-    public void syncClientInfo() {
-        // Logic to sync client info
-    }
 }
