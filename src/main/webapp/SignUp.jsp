@@ -15,23 +15,27 @@
     <body>
         <form name="formSignup" action="SignupServlet" method="POST">
             <table border="0" cellpadding="5">
-                
+
                 <tbody>
                     <tr>
                         <td></td>
-                        <td><input type="email" name="txtemail"  size="15" placeholder="user@email.com"/></td>
+                        <td><input type="email" name="txtemail"  size="15" placeholder="user@email.com" required/></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="text" name="txtusername"  size="15" placeholder="Username"/></td>
+                        <td><input type="text" name="txtusername"  size="15" placeholder="Username" required/></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="password" name="txtpassword"  size="15" placeholder="Password"/></td>
+                        <td><input type="text" name="txtclientname"  size="15" placeholder="Name" required/></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="password" name="txtpassword2"  size="15" placeholder="Retype Password"/></td>
+                        <td><input type="password" name="txtpassword"  size="15" placeholder="Password" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="password" name="txtpassword2"  size="15" placeholder="Retype Password" required/></td>
                     </tr>
                     <tr>
                         <td></td>

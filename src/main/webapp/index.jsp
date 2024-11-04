@@ -24,11 +24,11 @@
                    
                     <tr>
                         <td></td>
-                        <td><input type="text" name="txtusername"  size="15" placeholder="Username"/></td>
+                        <td><input type="text" name="txtusername"  size="15" placeholder="Username" required/></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="password" name="txtpassword"  size="15" placeholder="Password"/></td>
+                        <td><input type="password" name="txtpassword"  size="15" placeholder="Password" required/></td>
                     </tr>
                     <tr>
                         <td width="15px"></td>

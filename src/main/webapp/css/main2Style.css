@@ -1,0 +1,122 @@
+
+body {
+    background-color: #DBD3D3;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header, .footer {
+    background-color: #091057;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #024CAA;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #EC8305;
+    color: white;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px #DBD3D3;
+}
+
+.left-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.client-info, .contracts-section {
+    background-color: #DBD3D3;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #091057;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.notes-section {
+    flex: 1;
+    background-color: #DBD3D3;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.notes-section h2 {
+    margin-top: 0;
+}
+
+ul#toDoList {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#toDoList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-btn, .remove-btn {
+    background-color: #EC8305;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.add-btn:hover, .remove-btn:hover {
+    background-color: #024CAA;
+}
+
+.button {
+    background-color: #EC8305;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: #024CAA;
+}

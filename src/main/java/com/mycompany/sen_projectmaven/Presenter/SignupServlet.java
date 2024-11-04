@@ -11,7 +11,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -72,18 +73,39 @@ public class SignupServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
+        UserAuth auth = new UserAuth();
+
         String username = request.getParameter("txtusername");
         String password = request.getParameter("txtpassword");
+        String password2 = request.getParameter("txtpassword2");
+        String clientName = request.getParameter("txtclientname");
         String email = request.getParameter("txtemail");
         
-        if (UserAuth.authenticate(email)) {
-            
+        if (auth.authenticate(email)) {
+
+            showMessageDialog(null, "User already exists");
             System.out.println("User already exists");
             request.getRequestDispatcher("SignUp.jsp").forward(request, response);
+
         } else{
-            UserAuth.insert(username, password, email);
-            response.sendRedirect("index.jsp");
+
+
+            if (password.equals(password2)) {
+                //if the email is nothing, make the email null
+                if (email == "") {
+                    email = null;
+                }
+
+                auth.insert(username, password,clientName, email);
+                response.sendRedirect("index.jsp");
+            }else {
+                showMessageDialog(null, "Passwords do not match");
+                System.out.println("Passwords do not match");
+                request.getRequestDispatcher("SignUp.jsp").forward(request, response);
+            }
+
+
             
         }
         
