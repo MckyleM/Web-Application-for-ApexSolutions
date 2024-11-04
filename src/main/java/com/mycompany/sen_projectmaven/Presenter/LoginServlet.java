@@ -4,7 +4,6 @@
  */
 package com.mycompany.sen_projectmaven.Presenter;
 
-import com.mycompany.sen_projectmaven.Model.UserAuth;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;

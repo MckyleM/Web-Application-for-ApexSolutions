@@ -1,10 +1,10 @@
-package com.mycompany.sen_projectmaven.Model;
+package com.mycompany.sen_projectmaven.Presenter;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
+import com.mycompany.sen_projectmaven.Model.MaintenanceScheduler;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -81,6 +81,12 @@ public class Main extends HttpServlet {
             String jsonResponse = "{\"status\":\"" + (smsSent ? "success" : "failed") + "\"}";
             out.print(jsonResponse);
         }
+    }
+    public static void main(String[] args) {
+            MaintenanceScheduler scheduler = new MaintenanceScheduler();
+
+            //Runtime shutdown hook to ensure graceful shutdown
+            Runtime.getRuntime().addShutdownHook(new Thread(scheduler::shutdown));
     }
 }
 

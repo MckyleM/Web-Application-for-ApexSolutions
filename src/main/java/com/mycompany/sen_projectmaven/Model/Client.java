@@ -25,7 +25,7 @@ public class Client {
     public Client getClient(int ID) {
         Client client = null;
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM clients WHERE clientID = ?")) {
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM public.clients WHERE clientID = ?")) {
             stmt.setInt(1, ID);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
