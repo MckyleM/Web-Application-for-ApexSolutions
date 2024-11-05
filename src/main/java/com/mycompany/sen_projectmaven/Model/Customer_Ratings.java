@@ -4,29 +4,29 @@
  */
 package com.mycompany.sen_projectmaven.Model;
 
+import com.mycompany.sen_projectmaven.Model.DatabaseConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author mckyl
  */
 public class Customer_Ratings extends Client {
     private int feedbackID;
+    public String Username;
     private int rating;
+    Client client = new Client();
 
-    public int getFeedbackID() {
-        return feedbackID;
-    }
-
-    public void setFeedbackID(int feedbackID) {
+    public Customer_Ratings(){};
+    public Customer_Ratings(int feedbackID, String username, int rating){
         this.feedbackID = feedbackID;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
+        this.Username = client.username;
         this.rating = rating;
+
     }
+
 
     public void sendSurvey() {
         // Logic to send survey
@@ -35,4 +35,18 @@ public class Customer_Ratings extends Client {
     public String assessFeedback(String feedback) {
         return "Feedback assessed successfully";
     }
+
+    public void submitFeedback(int id) {
+        query = "UPDATE public.client_ratings SET rating = ? WHERE clientID = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, rating);
+            stmt.setInt(2, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Feedback submitted successfully");
+    }
+
 }
