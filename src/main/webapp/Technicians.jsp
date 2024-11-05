@@ -54,7 +54,7 @@
 
                     for(String tech : techs ){
 
-                        int technicianID = tech.
+                        int technicianID =
 
 
                 %>

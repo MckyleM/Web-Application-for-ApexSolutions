@@ -24,6 +24,19 @@ public class Technician {
     private String number;
 
 
+    public Technician(){}
+    
+    public Technician(int TechnicianID, String TechnicianName, String Task, String[] Skills, boolean Availability, String Number)
+    {
+        this.technicianID = TechnicianID;
+        this.technicianName = TechnicianName;
+        this.task = task;
+        this.skills = Skills;
+        this.availability = Availability;
+        this.number = Number;
+    }
+
+
     public void notifyJobs(String number) {
 
         Job job = new Job();
