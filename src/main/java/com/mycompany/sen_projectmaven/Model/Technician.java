@@ -25,7 +25,7 @@ public class Technician {
 
 
     public Technician(){}
-    
+
     public Technician(int TechnicianID, String TechnicianName, String Task, String[] Skills, boolean Availability, String Number)
     {
         this.technicianID = TechnicianID;

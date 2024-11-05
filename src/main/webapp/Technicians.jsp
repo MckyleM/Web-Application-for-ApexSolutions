@@ -54,12 +54,12 @@
 
                     for(String tech : techs ){
 
-                        int technicianID =
+
 
 
                 %>
                 <tr>
-                    <td><</td>
+                    <td><% t %></td>
                     <td>john@example.com</td>
                     <td>123-456-7890</td>
                     <td>
