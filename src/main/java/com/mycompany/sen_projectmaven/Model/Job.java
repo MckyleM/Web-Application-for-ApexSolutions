@@ -4,7 +4,6 @@
  */
 package com.mycompany.sen_projectmaven.Model;
 
-import com.mycompany.sen_projectmaven.Presenter.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

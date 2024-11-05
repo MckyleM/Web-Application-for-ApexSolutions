@@ -1,5 +1,7 @@
     package com.mycompany.sen_projectmaven.Presenter;
 
+import com.mycompany.sen_projectmaven.Model.DatabaseConnection;
+
 import java.sql.*;
 
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -16,8 +18,8 @@ public class UserAuth {
        //check if user is real, if their credentials exist in the database
         String query = "SELECT * FROM login WHERE username = ? AND password = ?";
 
-        try (Connection connection = DatabaseConnection.getConnection(); 
-            PreparedStatement statement = connection.prepareStatement(query)) {
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, username);
             statement.setString(2, password);
@@ -61,15 +63,54 @@ public class UserAuth {
             connection.setAutoCommit(false);
 
             try {
-                intoLogin(username,password, connection);
+                String query = "INSERT INTO login (username,password) VALUES (?,?)";
+
+                try (PreparedStatement statement = connection.prepareStatement(query)) {
+
+                    statement.setString(1, username);
+                    statement.setString(2, password);
+
+
+                    int rowsInserted = statement.executeUpdate();
+
+                    if (rowsInserted > 0) {
+
+                        System.out.println("Added");
+                    } else{
+                        System.out.println("insert ran - not added");
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                showMessageDialog(null, "Error!\n" + e.getMessage());
             }
 
             try {
-                intoClient(username, clientName, email,connection);
+                String query = "INSERT INTO client (username,\"clientName\",email) VALUES (?,?,?)";
+
+
+                try (PreparedStatement statement = connection.prepareStatement(query)) {
+
+                    statement.setString(1, username);
+                    statement.setString(2, clientName);
+                    statement.setString(3, email);
+
+                    int rowsInserted = statement.executeUpdate();
+
+                    if (rowsInserted > 0) {
+
+                        System.out.println("Added");
+                    } else{
+                        System.out.println("insert ran - not added");
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                showMessageDialog(null, "Error!\n" + e.getMessage());
             }
 
 
@@ -110,50 +151,11 @@ public class UserAuth {
     public void intoClient(String username, String clientName, String email, Connection connection){
 
         ;
-        String query = "INSERT INTO client (username,clientName,email) VALUES (?,?,?)";
 
-
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, username);
-            statement.setString(2, clientName);
-            statement.setString(3, email);
-
-            int rowsInserted = statement.executeUpdate();
-
-            if (rowsInserted > 0) {
-
-                System.out.println("Added");
-            } else{
-                System.out.println("insert ran - not added");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public void intoLogin(String username, String password, Connection connection){
 
-        String query = "INSERT INTO login (username,password) VALUES (?,?)";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-
-            statement.setString(1, username);
-            statement.setString(2, password);
-
-
-            int rowsInserted = statement.executeUpdate();
-
-            if (rowsInserted > 0) {
-
-                System.out.println("Added");
-            } else{
-                System.out.println("insert ran - not added");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }
