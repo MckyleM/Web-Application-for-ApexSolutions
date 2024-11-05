@@ -97,6 +97,9 @@
 </div>
 
 <script>
+
+    document.getElementById().addEventListener()
+
     function addClient() {
         alert("Add new client functionality");
     }
