@@ -59,7 +59,7 @@
 
                 %>
                 <tr>
-                    <td><% t %></td>
+                    <td><%  %></td>
                     <td>john@example.com</td>
                     <td>123-456-7890</td>
                     <td>
