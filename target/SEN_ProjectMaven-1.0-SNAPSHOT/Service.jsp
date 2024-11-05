@@ -11,7 +11,6 @@
     <title>Field Services Management</title>
     <link href="css/main2Style.css" rel="stylesheet" type="text/css"/>
     <style>
-        /* Additional styles for drag-and-drop cards */
         .job-cards {
             display: flex;
             justify-content: space-between;
@@ -59,7 +58,6 @@
 </div>
 
 <div class="container">
-    <!-- Job Requests Section -->
     <div class="left-section">
         <div class="job-requests">
             <h2>Job Requests</h2>
@@ -106,7 +104,6 @@
             </table>
         </div>
 
-        <!-- Available Technicians Section -->
         <div class="available-technicians">
             <h2>Available Technicians</h2>
             <table>
@@ -138,7 +135,6 @@
         </div>
     </div>
 
-    <!-- Active Jobs Schedule Section -->
     <div class="active-jobs">
         <h2>Active Jobs</h2>
         <div class="job-cards">
@@ -157,7 +153,6 @@
                 </div>
             </div>
 
-            <!-- In Progress Jobs Column -->
             <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h3>In Progress Jobs</h3>
                 <div class="card" draggable="true" ondragstart="drag(event)" id="job3">
@@ -167,7 +162,6 @@
                 </div>
             </div>
 
-            <!-- Completed Jobs Column -->
             <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h3>Completed Jobs</h3>
                 <div class="card" draggable="true" ondragstart="drag(event)" id="job4">
@@ -185,9 +179,8 @@
 </div>
 
 <script>
-    // Drag and drop functions
     function allowDrop(event) {
-        event.preventDefault(); // Prevent default behavior (e.g., opening as link)
+        event.preventDefault();
     }
 
     function drag(event) {
@@ -195,7 +188,7 @@
     }
 
     function drop(event) {
-        event.preventDefault(); // Prevent default behavior
+        event.preventDefault();
         var data = event.dataTransfer.getData("text"); // Get the ID of the dragged element
         event.target.appendChild(document.getElementById(data)); // Append the dragged element to the drop target
     }

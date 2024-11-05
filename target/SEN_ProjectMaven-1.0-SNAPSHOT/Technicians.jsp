@@ -28,9 +28,7 @@
 </div>
 
 <div class="container">
-    <!-- Left section with Technician Information and Active Contracts -->
     <div class="left-section">
-        <!-- Technician information section with a table and action buttons -->
         <div class="client-info" id="TechInfo">
             <h2>Technician Information</h2>
             <table>
@@ -52,13 +50,12 @@
                         <button class="button" onclick="deleteClient()">Delete</button>
                     </td>
                 </tr>
-                <!-- More rows can be added dynamically -->
+                <!-- add new rows here -->
                 </tbody>
             </table>
             <button class="button" onclick="addClient()">Add New Client</button>
         </div>
 
-        <!-- Active contracts section with a table -->
         <div class="contracts-section">
             <h2>Active Contracts</h2>
             <table>
@@ -77,13 +74,12 @@
                     <td>2024-12-31</td>
                     <td>Active</td>
                 </tr>
-                <!-- More rows can be added dynamically -->
+                <!-- to be added -->
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Right section for To-Do List -->
     <div class="notes-section">
         <h2>To-Do List</h2>
         <ul id="toDoList">
@@ -105,21 +101,17 @@
     function populateTable(dataArray) {
         const tableBody = document.querySelector("#TechInfo tbody");
 
-        // Clear the table body (if needed)
         tableBody.innerHTML = "";
 
-        // Iterate over the data array
         dataArray.forEach((item) => {
             const row = document.createElement("tr");
 
-            // Create a cell for each property in the item object
             for (const key in item) {
                 const cell = document.createElement("td");
                 cell.textContent = item[key];
                 row.appendChild(cell);
             }
 
-            // Append the row to the table body
             tableBody.appendChild(row);
         });
     }

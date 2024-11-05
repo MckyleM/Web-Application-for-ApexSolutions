@@ -39,14 +39,15 @@ public class Main extends HttpServlet {
     }
     public void TestAPI(String number) {
         System.out.println("Start of program");
-        SMSAPI sms = new SMSAPI();
+        String message = "This test is final test and it will work for sure for sure";
+
 
         // Example data
         //String phoneNumber = "+1234567890";
-        String message = "This test is final test and it will work for sure for sure";
+
         
         try{
-            sms.SendMessage(message,number);
+            SMSAPI sms = new SMSAPI(message, number);
             System.out.println("SMS sent successfully");
             }
         catch(Exception e)
