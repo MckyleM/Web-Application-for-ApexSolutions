@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+
+%>
 <html>
 <head>
     <title>Technician Management</title>
@@ -25,10 +28,10 @@
 </div>
 
 <div class="container">
-    <!-- Left section with Client Information and Active Contracts -->
+    <!-- Left section with Technician Information and Active Contracts -->
     <div class="left-section">
-        <!-- Client information section with a table and action buttons -->
-        <div class="client-info">
+        <!-- Technician information section with a table and action buttons -->
+        <div class="client-info" id="TechInfo">
             <h2>Technician Information</h2>
             <table>
                 <thead>
@@ -97,6 +100,40 @@
 </div>
 
 <script>
+
+
+    function populateTable(dataArray) {
+        const tableBody = document.querySelector("#TechInfo tbody");
+
+        // Clear the table body (if needed)
+        tableBody.innerHTML = "";
+
+        // Iterate over the data array
+        dataArray.forEach((item) => {
+            const row = document.createElement("tr");
+
+            // Create a cell for each property in the item object
+            for (const key in item) {
+                const cell = document.createElement("td");
+                cell.textContent = item[key];
+                row.appendChild(cell);
+            }
+
+            // Append the row to the table body
+            tableBody.appendChild(row);
+        });
+    }
+
+    window.onload = function (){
+
+    populateTable()
+    };
+
+    document.getElementById().addEventListener("input", function(){
+
+        fetch("processI")
+    });
+
     function addClient() {
         alert("Add new client functionality");
     }
