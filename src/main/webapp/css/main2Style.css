@@ -116,11 +116,11 @@ ul#toDoList li {
     padding: 5px 10px;
     cursor: pointer;
     font-size: 16px;
-    border-radius: 10px; /* Rounded edges for buttons */
+    border-radius: 10px;
 }
 
 .remove-btn {
-    background-color: red; /* Red color for minus button */
+    background-color: red;
 }
 
 .add-btn:hover, .remove-btn:hover {
@@ -134,27 +134,26 @@ ul#toDoList li {
     padding: 8px 16px;
     cursor: pointer;
     margin: 10px;
-    border-radius: 10px; /* Rounded edges */
+    border-radius: 10px;
 }
 
 .button:hover {
     background-color: #024CAA;
 }
 
-/* Specific button styles */
 .button.update-btn {
-    background-color: #EC8305; /* Default orange color for Update */
+    background-color: #EC8305;
 }
 
 .button.delete-btn {
-    background-color: red; /* Red color for Delete */
+    background-color: red;
 }
 
 .button.update-btn:hover, .button.delete-btn:hover {
-    background-color: #024CAA; /* Hover effect */
+    background-color: #024CAA;
 }
 .details-view {
-    display: none; /* Initially hidden */
+    display: none;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     padding: 10px;
@@ -165,7 +164,7 @@ ul#toDoList li {
     background-color: #f1f1f1;
 }
 .summary {
-    display: none; /* Initially hidden */
+    display: none;
     position: absolute;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -174,10 +173,10 @@ ul#toDoList li {
     width: 200px;
 }
 .job-row:hover .summary {
-    display: block; /* Show summary on hover */
+    display: block;
 }
 
-/* Styles for sections and tables */
+
 .job-requests, .available-technicians, .active-jobs {
     background-color: #DBD3D3;
     padding: 20px;
