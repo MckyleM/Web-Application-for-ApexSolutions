@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.mycompany.sen_projectmaven.Model.Technician" %><%--
   Created by IntelliJ IDEA.
   User: ntuli
   Date: 2024/11/04
@@ -29,7 +31,7 @@
 
 <div class="container">
     <div class="left-section">
-        <div class="client-info" id="TechInfo">
+        <div class="tech-info" >
             <h2>Technician Information</h2>
             <table>
                 <thead>
@@ -41,6 +43,33 @@
                 </tr>
                 </thead>
                 <tbody>
+
+                <%
+
+
+                    Technician technician = new Technician();
+                    List<String> techs = new ArrayList<String>();
+
+                    techs = technician.getAvailableTechnicians();
+
+                    for(String tech : techs ){
+
+
+
+
+                %>
+                <tr>
+                    <td><% t %></td>
+                    <td>john@example.com</td>
+                    <td>123-456-7890</td>
+                    <td>
+                        <button class="button" onclick="updateClient()">Update</button>
+                        <button class="button" onclick="deleteClient()">Delete</button>
+                    </td>
+                </tr>
+                <%
+                    }
+                %>
                 <tr>
                     <td>John Doe</td>
                     <td>john@example.com</td>
@@ -51,6 +80,7 @@
                     </td>
                 </tr>
                 <!-- add new rows here -->
+
                 </tbody>
             </table>
             <button class="button" onclick="addClient()">Add New Client</button>

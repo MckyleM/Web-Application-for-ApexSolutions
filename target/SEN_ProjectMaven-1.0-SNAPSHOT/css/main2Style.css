@@ -48,7 +48,7 @@ body {
     gap: 20px;
 }
 
-.client-info, .contracts-section {
+.tech-info, .contracts-section {
     background-color: #DBD3D3;
     padding: 20px;
     border-radius: 8px;
