@@ -14,6 +14,10 @@
         <link href="css/indexStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+
+    <%
+
+    %>
         <h1 id="header">Hello Apex Solutions!</h1>
         <hr>
        
