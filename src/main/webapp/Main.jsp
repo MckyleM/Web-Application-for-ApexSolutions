@@ -21,7 +21,7 @@
 </div>
 <div class="navbar">
     <a href="Main.jsp">Home</a>
-    <a href="Clients.jsp">Clients</a>
+    <a href="Technicians.jsp">Technicians</a>
     <a href="Service.jsp">Field Services</a>
     <a href="Contracts.jsp">Contracts</a>
     <a href=".jsp">Ratings</a>
