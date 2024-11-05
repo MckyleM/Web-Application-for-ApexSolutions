@@ -33,7 +33,7 @@ public class Job {
     }
     public void AssignJob(int techID,int jobID)
     {
-        String query = "UPDATE public.jobs\n" +
+        String query = "UPDATE jobs\n" +
                 "SET \"TechnicianID\" = ?, \"JobStatus\" = ?, \"JobType\" = ?, \"ContractID\" = ?\n" +
                 "WHERE \"JobID\" = ?;";
         try (Connection connection = DatabaseConnection.getConnection();
@@ -50,7 +50,7 @@ public class Job {
     }
     public boolean findTechnicianJob(int techID)
     {
-        String query = "SELECT * FROM \"jobs\" WHERE TechnicianID = ?";
+        String query = "SELECT * FROM \"jobs\" WHERE \"TechnicianID\" = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -70,7 +70,7 @@ public class Job {
     {
         //List<String> availabletechnums = new ArrayList<>();
         List<Integer> jobs = new ArrayList<>();
-        String query = "SELECT jobID FROM jobs WHERE jobStatus = Open";
+        String query = "SELECT \"JobID\" FROM jobs WHERE \"JobStatus\" = 'Open' ";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {
             ResultSet rs = pstmt.executeQuery();

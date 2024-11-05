@@ -38,7 +38,7 @@ public class Contract_Manager {
 
     public Contract_Manager getContract(int ID) {
         Contract_Manager contract = null;
-        query = "SELECT contractID FROM contract_manager WHERE clientID = ?";
+        query = "SELECT \"contractID\" FROM contract_manager WHERE \"clientID\" = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
@@ -64,7 +64,7 @@ public class Contract_Manager {
 
     public String getContractString(int ID) {
         String ContractInfoString = null;
-        query = "SELECT * FROM public.contract_manager WHERE clientID = ?";
+        query = "SELECT * FROM public.contract_manager WHERE \"clientID\" = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, Integer.toString(ID));

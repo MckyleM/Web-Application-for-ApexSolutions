@@ -23,7 +23,7 @@ public class CRM {
 
     public List<String> getClientHistory(int ID) {
         List<String> ClientHistoryList = new ArrayList<>();
-        String query = "SELECT \"clientHistory\" FROM \"public.client\" WHERE \"clientID\" =?";
+        String query = "SELECT \"clientHistory\" FROM client WHERE \"clientID\" =?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, Integer.toString(ID));

@@ -33,7 +33,7 @@ public class System_Forecast {
 
     public List<Integer> getMaintananceNeeded()
     {
-        query = "SELECT 'MaintenanceStatas' FROM public.system_forecast WHERE MaintenanceStatus = Required";
+        query = "SELECT \"MaintananceStatus\" FROM system_forecast WHERE \"MaintananceStatus\" = 'Required'";
         List<Integer> sys = new ArrayList<>();
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {

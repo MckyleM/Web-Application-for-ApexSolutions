@@ -39,7 +39,7 @@ public class Client {
     public Client getClient(int ID) {
         Client client = null;
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM clients WHERE clientID = ?")) {
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM client WHERE \"clientID\" = ?")) {
             stmt.setInt(1, ID);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
@@ -59,7 +59,7 @@ public class Client {
 
     public String getClientString(int ID) {
         String ClientInfoString = null;
-        query = "SELECT * FROM clients WHERE clientID = ?";
+        query = "SELECT * FROM client WHERE \"clientID\" = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, Integer.toString(ID));

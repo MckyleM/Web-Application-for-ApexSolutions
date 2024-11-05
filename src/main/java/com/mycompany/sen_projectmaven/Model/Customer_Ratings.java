@@ -37,7 +37,7 @@ public class Customer_Ratings extends Client {
     }
 
     public void submitFeedback(int id) {
-        query = "UPDATE public.client_ratings SET rating = ? WHERE clientID = ?";
+        query = "UPDATE client_ratings SET rating = ? WHERE username = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, rating);

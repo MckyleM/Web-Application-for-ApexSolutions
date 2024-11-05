@@ -72,7 +72,7 @@ public class Technician {
     public List<String> getAvailableTechnicians() {
         List<String> availabletechnums = new ArrayList<>();
 
-        String query = "SELECT public.technician FROM technicians WHERE availability = TRUE";
+        String query = "SELECT \"technicianName\" FROM technician WHERE availability = TRUE";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {
             ResultSet rs = pstmt.executeQuery();
