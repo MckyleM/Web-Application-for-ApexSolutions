@@ -15,6 +15,7 @@
     Client client = new Client();
     client = client.getClient(username);
 
+    session.setAttribute("client", client);
 
     if (client.username == "" || client.username == null) {
         client.username = "Main";
