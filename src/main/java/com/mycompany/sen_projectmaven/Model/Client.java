@@ -63,13 +63,44 @@ public class Client {
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM client WHERE username = ?")) {
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
+
+
+
+
+
+
             if (rs.next()) {
                 client = new Client(clientID,username, clientName,email,clientHistory);
                 client.clientID = rs.getInt("clientID");
                 client.username = rs.getString("username");
                 client.clientName = rs.getString("clientName");
                 client.email = rs.getString("email");
-                client.clientHistory = (String[]) rs.getArray("clientHistory").getArray();
+
+
+
+
+                try{
+                    client.clientHistory = (String[]) rs.getArray("clientHistory").getArray();
+                } catch (SQLException e) {
+                    System.out.println("Error: " + e.getMessage());
+                } catch (RuntimeException e) {
+                    System.out.println("Error: " + e.getMessage());
+                }
+
+                if (client != null) {
+                    if (client.username == null || client.username.isEmpty()) {
+                        //where username is null or empty, if needed
+                        System.out.println("Username is empty or null");
+                    }
+                    else{
+                        client.username = rs.getString("username");
+                    }
+                } else {
+                    // Handle the case where the client was not found in the database
+                    System.out.println("Client not found.");
+                }
+
+
 
             }
         } catch (SQLException e) {
