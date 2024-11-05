@@ -1,3 +1,4 @@
+<%@ page import="com.mycompany.sen_projectmaven.Model.Client" %>
 <head>
     <title>ApexCare Solutions</title>
     <link href="css/main2Style.css" rel="stylesheet" type="text/css"/>
@@ -11,9 +12,12 @@
 
     String username = (String) session.getAttribute("username");;
 
+    Client client = new Client();
+    client = client.getClient(username);
 
-    if (username == "" || username == null) {
-        username = "Main";
+
+    if (client.username == "" || client.username == null) {
+        client.username = "Main";
     }
 %>
 <div class="header">

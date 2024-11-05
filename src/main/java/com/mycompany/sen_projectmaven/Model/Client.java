@@ -21,17 +21,17 @@ public class Client {
     private int clientID;
     public String username;
     private String clientName;
-    private String[] contracts;
+    private String email;
     public String[] clientHistory;
 
 
     public Client(){};
-    public Client(int clientID, String username, String clientName, String[] contracts, String[] clientHistory)
+    public Client(int clientID, String username, String clientName, String email, String[] clientHistory)
     {
         this.clientID = clientID;
         this.username = username;
         this.clientName = clientName;
-        this.contracts = contracts;
+        this.email = email;
         this.clientHistory = clientHistory;
 
     }
@@ -43,11 +43,32 @@ public class Client {
             stmt.setInt(1, ID);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                client = new Client(clientID,username, clientName,contracts,clientHistory);
+                client = new Client(clientID,username, clientName,email,clientHistory);
                 client.clientID = rs.getInt("clientID");
                 client.username = rs.getString("username");
                 client.clientName = rs.getString("clientName");
-                client.contracts = (String[]) rs.getArray("contracts").getArray();
+                client.email = rs.getString("email");
+                client.clientHistory = (String[]) rs.getArray("clientHistory").getArray();
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return client;
+    }
+
+    public Client getClient(String username) {
+        Client client = null;
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM client WHERE username = ?")) {
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                client = new Client(clientID,username, clientName,email,clientHistory);
+                client.clientID = rs.getInt("clientID");
+                client.username = rs.getString("username");
+                client.clientName = rs.getString("clientName");
+                client.email = rs.getString("email");
                 client.clientHistory = (String[]) rs.getArray("clientHistory").getArray();
 
             }
@@ -63,6 +84,24 @@ public class Client {
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, Integer.toString(ID));
+            ResultSet rs = statement.executeQuery();
+
+            if(rs.next()){
+                ClientInfoString = rs.getString("username, clientname, email, clientHistory");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ClientInfoString;
+    }
+
+    public String getClientString(String username) {
+        String ClientInfoString = null;
+        query = "SELECT * FROM client WHERE username = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
