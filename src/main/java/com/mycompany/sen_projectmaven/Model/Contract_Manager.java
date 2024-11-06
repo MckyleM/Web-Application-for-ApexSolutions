@@ -23,16 +23,18 @@ public class Contract_Manager {
 
     private int contractID;
     private int clientID;
-    private Date startDate;
-    private Date endDate;
+    private String service;
+    private String level;
+    private String Status;
 
     public Contract_Manager(){};
-    public Contract_Manager(int ContractID,int ClientID, Date StartDate, Date EndDate)
+    public Contract_Manager(int ContractID,int ClientID, String Service, String Level, String Status)
     {
         this.contractID = ContractID;
         this.clientID = ClientID;
-        this.startDate = StartDate;
-        this.endDate = EndDate;
+        this.service = Service;
+        this.level = Level;
+        this.Status = Status;
     }
     String query;
 
@@ -46,10 +48,11 @@ public class Contract_Manager {
             ResultSet rs = stmt.executeQuery();
             //Finds first instance of ID
             while (rs.next()) {
-                contract = new Contract_Manager(contractID, clientID, startDate, endDate);
+                contract = new Contract_Manager(contractID, clientID, service, level, Status);
                 contract.contractID =rs.getInt("contractID");
-                contract.startDate = rs.getDate("startDate");
-                contract.endDate = rs.getDate("endDate");
+                contract.service = rs.getString("service");
+                contract.level = rs.getString("level");
+                contract.Status = rs.getString("status");
 
                 // Add additional fields here as needed
             }
@@ -85,20 +88,5 @@ public class Contract_Manager {
 
     }
 
-    public void renewContract(Date newEndDate) {
-        endDate = newEndDate;
-    }
 
-    public String trackContract() {
-        if(endDate.before(new Date())) {
-            return "Contract has expired";
-        }
-        else if (startDate.after(new Date())) {
-            return "Contract has not started yet";
-        }
-        else{
-            return "Contract is active";
-        }
-
-    }
 }

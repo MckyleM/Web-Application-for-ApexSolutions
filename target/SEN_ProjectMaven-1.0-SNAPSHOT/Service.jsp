@@ -54,7 +54,7 @@
     <a href="Client Management.jsp">Client Management</a>
     <a href="Service.jsp">Field Services</a>
     <a href="Contracts.jsp">Contracts</a>
-    <a href="ServiceDesk.jsp">Ratings</a>
+    <a href="ServiceDesk.jsp">Service Desk</a>
 </div>
 
 <div class="container">
@@ -72,6 +72,10 @@
                 </tr>
                 </thead>
                 <tbody>
+
+                <%
+
+                %>
                 <tr class="job-row" onmouseover="showSummary('job1Summary', event)" onmouseout="hideSummary('job1Summary')">
                     <td>J001</td>
                     <td>John Doe</td>

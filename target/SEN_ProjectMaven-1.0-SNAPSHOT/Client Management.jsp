@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.mycompany.sen_projectmaven.Model.Technician" %><%--
+<%@ page import="com.mycompany.sen_projectmaven.Model.Technician" %>
+<%@ page import="com.mycompany.sen_projectmaven.Model.Client" %><%--
   Created by IntelliJ IDEA.
   User: ntuli
   Date: 2024/11/04
@@ -26,7 +27,7 @@
     <a href="Client Management.jsp">Client Management</a>
     <a href="Service.jsp">Field Services</a>
     <a href="Contracts.jsp">Contracts</a>
-    <a href="ServiceDesk.jsp">Ratings</a>
+    <a href="ServiceDesk.jsp">Service Desk</a>
 </div>
 
 <div class="container">
@@ -36,9 +37,9 @@
             <table>
                 <thead>
                 <tr>
+                    <th>ID #</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Phone</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -47,23 +48,23 @@
                 <%
 
 
-                    Technician technician = new Technician();
-                    List<Technician> techs = new ArrayList<Technician>();
+                    Client client = new Client();
+                    List<Client> clients = new ArrayList<Client>();
 
-                    techs = technician.getAllTechnicians();
+                    clients = client.getAllCLients();
 
-                    for(Technician tech : techs ){
+                    for(Client c : clients ){
 
-                        int ID = tech.getTechnicianID();
-                        String Name = tech.getTechnicianName();
-                        String Number = tech.getNumber();
+                        int ID = c.getClientID();
+                        String Name = c.getClientName();
+                        String email = c.getEmail();
 
 
                 %>
                 <tr>
                     <td><%= ID %></td>
                     <td><%= Name %></td>
-                    <td><%= Number %></td>
+                    <td><%= email %></td>
                     <td>
                         <button class="button" onclick="updateClient()">Update</button>
                         <button class="button" onclick="deleteClient()">Delete</button>
@@ -72,15 +73,6 @@
                 <%
                     }
                 %>
-                <tr>
-                    <td>John Doe</td>
-                    <td>john@example.com</td>
-                    <td>123-456-7890</td>
-                    <td>
-                        <button class="button" onclick="updateClient()">Update</button>
-                        <button class="button" onclick="deleteClient()">Delete</button>
-                    </td>
-                </tr>
                 <!-- add new rows here -->
 
                 </tbody>
@@ -100,6 +92,19 @@
                 </tr>
                 </thead>
                 <tbody>
+                <%
+
+//                    Technician technician = new Technician();
+//                    List<Technician> techs = new ArrayList<Technician>();
+//
+//                    techs = technician.getAllTechnicians();
+//
+//                    for(Technician tech : techs ){
+//
+//                        int ID = tech.getTechnicianID();
+//                        String Name = tech.getTechnicianName();
+//                        String Number = tech.getNumber();
+                %>
                 <tr>
                     <td>C123</td>
                     <td>John Doe</td>

@@ -1,4 +1,4 @@
-package com.mycompany.sen_projectmaven.Presenter;
+package com.mycompany.sen_projectmaven.View;
 
 import java.net.URL;
 import java.net.URLEncoder;

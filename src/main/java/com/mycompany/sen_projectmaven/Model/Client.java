@@ -57,6 +57,50 @@ public class Client {
         return client;
     }
 
+    public String getClientName() {
+        return clientName;
+    }
+
+    public int getClientID() {
+        return clientID;
+    }
+
+
+
+    public String getEmail() { return email; }
+
+    public List<Client> getAllCLients() {
+        List<Client> clients = new ArrayList<>();
+        String query = "SELECT \"clientID\", \"clientName\", username, email, \"clientHistory\" FROM client";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(query);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                int clientID = rs.getInt("clientID");
+                String clientName = rs.getString("clientName");
+
+                if (clientHistory != null) {
+                    String[] clientHistory = rs.getString("clientHistory").split(",");
+                }
+                 // Assuming skills are stored as a comma-separated string
+                String username = rs.getString("username");
+                String email = rs.getString("email");
+
+                Client client = new Client(clientID,username,clientName,email,clientHistory);
+                clients.add(client);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return clients;
+    }
+//    public String getClientContracts(Client client) {
+//        return client.contracts;
+//    }
+
     public Client getClient(String username) {
         Client client = null;
         try (Connection conn = DatabaseConnection.getConnection();
