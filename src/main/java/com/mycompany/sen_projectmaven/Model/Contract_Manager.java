@@ -13,7 +13,9 @@ import java.sql.SQLException;
  *
  * @author mckyl
  */
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.http.annotation.Contract;
 
@@ -37,6 +39,36 @@ public class Contract_Manager {
         this.Status = Status;
     }
     String query;
+
+    public List<Contract_Manager> getAllContracts(int clientID){
+        List<Contract_Manager> Contracts = new ArrayList<Contract_Manager>();
+
+        String query = "SELECT * FROM contract_manager WHERE \"clientID\"";
+
+        try(Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query)){
+
+            statement.setInt(1, clientID);
+            ResultSet rs = statement.executeQuery();
+
+
+            while (rs.next()) {
+
+                Contract_Manager cm = new Contract_Manager();
+
+                clientID = rs.getInt("clientID");
+                String service = rs.getString("service");
+                String level = rs.getString("level");
+                String Status = rs.getString("Status");
+                Contracts.add(cm);
+            }
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return Contracts;
+    }
 
     public Contract_Manager getContract(int ID) {
         Contract_Manager contract = null;
@@ -67,7 +99,7 @@ public class Contract_Manager {
 
     public String getContractString(int ID) {
         String ContractInfoString = null;
-        query = "SELECT * FROM public.contract_manager WHERE \"clientID\" = ?";
+        query = "SELECT * FROM contract_manager WHERE \"clientID\" = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, Integer.toString(ID));
@@ -82,11 +114,27 @@ public class Contract_Manager {
         }
         return ContractInfoString;
     }
+
     public int getContractID() {
         return contractID;
-
-
     }
+
+    public int getCLientID() {
+        return clientID;
+    }
+
+    public String getService() {
+        return service;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
 
 
 }

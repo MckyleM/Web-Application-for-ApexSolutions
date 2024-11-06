@@ -1,7 +1,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.mycompany.sen_projectmaven.Model.Technician" %>
-<%@ page import="com.mycompany.sen_projectmaven.Model.Client" %><%--
+<%@ page import="com.mycompany.sen_projectmaven.Model.Client" %>
+<%@ page import="com.mycompany.sen_projectmaven.Model.Contract_Manager" %><%--
   Created by IntelliJ IDEA.
   User: ntuli
   Date: 2024/11/04
@@ -86,31 +87,37 @@
                 <thead>
                 <tr>
                     <th>Contract ID</th>
-                    <th>Client Name</th>
-                    <th>Expiration Date</th>
+                    <th>Service</th>
+                    <th>level</th>
                     <th>Status</th>
                 </tr>
                 </thead>
                 <tbody>
                 <%
 
-//                    Technician technician = new Technician();
-//                    List<Technician> techs = new ArrayList<Technician>();
-//
-//                    techs = technician.getAllTechnicians();
-//
-//                    for(Technician tech : techs ){
-//
-//                        int ID = tech.getTechnicianID();
-//                        String Name = tech.getTechnicianName();
-//                        String Number = tech.getNumber();
+                    Contract_Manager contract = new Contract_Manager();
+                    List<Contract_Manager> ContractList = new ArrayList<Contract_Manager>();
+
+                    //ContractList = contract.getAllContracts();
+
+                    for(Contract_Manager cm : ContractList ){
+
+                        int ID = cm.getContractID();
+                        int ClientID = cm.getCLientID();
+                        String service = cm.getService();
+                        String level = cm.getLevel();
+                        String status = cm.getStatus();
+
                 %>
                 <tr>
-                    <td>C123</td>
-                    <td>John Doe</td>
-                    <td>2024-12-31</td>
-                    <td>Active</td>
+                    <td><%= ID %></td>
+                    <td><%= service %></td>
+                    <td><%= level %></td>
+                    <td><%= status %></td>
                 </tr>
+                <%
+                    }
+                %>
                 <!-- to be added -->
                 </tbody>
             </table>
