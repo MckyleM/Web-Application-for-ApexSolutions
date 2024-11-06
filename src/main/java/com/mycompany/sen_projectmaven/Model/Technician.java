@@ -18,7 +18,6 @@ import com.mycompany.sen_projectmaven.Model.DatabaseConnection;
 public class Technician {
     private int technicianID;
     private String technicianName;
-    private String task;
     private String[] skills;
     private boolean availability;
     private String number;
@@ -26,11 +25,10 @@ public class Technician {
 
     public Technician(){}
 
-    public Technician(int TechnicianID, String TechnicianName, String Task, String[] Skills, boolean Availability, String Number)
+    public Technician(int TechnicianID, String TechnicianName, String[] Skills, boolean Availability, String Number)
     {
         this.technicianID = TechnicianID;
         this.technicianName = TechnicianName;
-        this.task = task;
         this.skills = Skills;
         this.availability = Availability;
         this.number = Number;
@@ -82,6 +80,32 @@ public class Technician {
         }
 
     }
+
+    public List<Technician> getAllTechnicians() {
+        List<Technician> technicians = new ArrayList<>();
+        String query = "SELECT \"technicianID\", \"technicianName\",  skills, availability, number FROM technician";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(query);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                int technicianID = rs.getInt("technicianID");
+                String technicianName = rs.getString("technicianName");
+                String[] skills = rs.getString("skills").split(","); // Assuming skills are stored as a comma-separated string
+                boolean availability = rs.getBoolean("availability");
+                String number = rs.getString("number");
+
+                Technician technician = new Technician(technicianID, technicianName, skills, availability, number);
+                technicians.add(technician);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return technicians;
+    }
+
     public List<String> getAvailableTechnicians() {
         List<String> availabletechnums = new ArrayList<>();
 
@@ -131,11 +155,11 @@ public class Technician {
     }
 
     public String getTask() {
-        return task;
+        return "task";
     }
 
     public void setTask(String task) {
-        this.task = task;
+        //this.task = task;
         assignTask();
     }
 

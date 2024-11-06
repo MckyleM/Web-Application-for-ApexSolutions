@@ -26,10 +26,10 @@
 </div>
 <div class="navbar">
     <a href="Main.jsp">Home</a>
-    <a href="Technicians.jsp">Technicians</a>
+    <a href="Client Management.jsp">Client Management</a>
     <a href="Service.jsp">Field Services</a>
     <a href="Contracts.jsp">Contracts</a>
-    <a href=".jsp">Ratings</a>
+    <a href="ServiceDesk.jsp">Service Desk</a>
 </div>
 <div class="container">
     <h2>Welcome to ApexCare Solutions <%=username%></h2>
@@ -41,4 +41,4 @@
     <p>&copy; 2024 ApexCare Solutions - All rights reserved</p>
 </div>
 </body>
-</html>
+</html>  
