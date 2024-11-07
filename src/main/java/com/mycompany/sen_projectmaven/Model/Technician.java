@@ -33,8 +33,6 @@ public class Technician {
         this.availability = Availability;
         this.number = Number;
     }
-
-
     public void notifyJobs(String number) {
 
         Job job = new Job();
@@ -80,7 +78,6 @@ public class Technician {
         }
 
     }
-
     public List<Technician> getAllTechnicians() {
         List<Technician> technicians = new ArrayList<>();
         String query = "SELECT \"technicianID\", \"technicianName\",  skills, availability, number FROM technician";
@@ -105,7 +102,6 @@ public class Technician {
 
         return technicians;
     }
-
     public List<String> getAvailableTechnicians() {
         List<String> availabletechnums = new ArrayList<>();
 
@@ -137,36 +133,29 @@ public class Technician {
         for (String technicianNum : list) {
             notifySystem(technicianNum,SysArr);
         }
-    }
+    }   
     public int getTechnicianID() {
         return technicianID;
     }
-
     public void setTechnicianID(int technicianID) {
         this.technicianID = technicianID;
     }
-
     public String getTechnicianName() {
         return technicianName;
     }
-
     public void setTechnicianName(String technicianName) {
         this.technicianName = technicianName;
     }
-
     public String getTask() {
         return "task";
     }
-
     public void setTask(String task) {
         //this.task = task;
         assignTask();
     }
-
     public String[] getSkills() {
         return skills;
     }
-
     public void setSkills(String[] skills) {
         this.skills = skills;
     }
@@ -180,17 +169,14 @@ public class Technician {
     public boolean getAvailability() {
         return availability;
     }
-
     public void setAvailability(boolean availability) {
         this.availability = availability;
         updateAvailability();
     }
-
     public void updateAvailability() {
         System.out.println("Updating availability...");
         // Add logic to update availability
     }
-
     public void assignTask() {
         // Add logic for assigning tasks
     }
